@@ -24,7 +24,7 @@ public class PolymorphWindow extends JPanel implements ActionListener{
     }
     
     public void buildWindow(){
-   	 window = new JFrame("IT'S MORPHIN' TIME!");
+   	 window = new JFrame("");
    	 window.add(this);
    	 window.getContentPane().setPreferredSize(new Dimension(500, 500));
    	 window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
