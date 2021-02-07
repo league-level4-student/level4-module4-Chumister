@@ -8,8 +8,11 @@ public class MovmentMorph extends Polymorph{
 		super(x, y);
 	}
 
+	@Override
 	public void draw(Graphics g) {
+		set_x(get_x() + 1);
+		set_y(get_y() + 1);
 		g.setColor(Color.green);
-		g.fillRect(x, y, width, height);
+		g.fillRect(get_x(), get_y(), get_width(), get_height());
 	}
 }
