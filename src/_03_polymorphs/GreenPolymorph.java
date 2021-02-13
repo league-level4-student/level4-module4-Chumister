@@ -10,6 +10,6 @@ public class GreenPolymorph extends Polymorph{
 
 	public void draw(Graphics g) {
 		g.setColor(Color.green);
-		g.fillRect(get_x(), get_y(), get_width(), get_height());
+		g.fillRect(x, y, width, height);
 	}
 }
