@@ -34,7 +34,7 @@ public class ImagePolymorph extends Polymorph{
 		@Override
 		public void draw(Graphics g) {
 			try {
-				image = ImageIO.read(this.getClass().getResourceAsStream("copy_of_wallpaper1.jpg"));
+				image = ImageIO.read(this.getClass().getResourceAsStream("Sogeking.jpg"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
