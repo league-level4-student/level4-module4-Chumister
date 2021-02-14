@@ -21,7 +21,7 @@ public class MovmentMorph extends Polymorph{
 		int move = random.nextInt(50) - 25;
 		boolean direction = random.nextBoolean();
 
-		if (x < 875 && x > 25 && y < 575 && y > 25) {
+		if (x < 835 && x > 25 && y < 545 && y > 25) {
 			if (direction) {
 				x += move;
 			} else {
