@@ -5,24 +5,28 @@ import java.util.ArrayList;
 public class Hospital {
 	ArrayList<Doctor> doctors = new ArrayList<Doctor>();
 	ArrayList<Patient> patients = new ArrayList<Patient>();
-	public void addDoctor() {
-		doctors.addAll(doctors);
-		int[] val = {1,2,3,4,5};
-		for (int i = 0; i < val.length; i++) {
-			val[i]=val[i]*val[i];
-			
-		}
-		System.out.println(val[3]);
-	}
-	public void addPatient() {
-		patients.addAll(patients);
+	
+	Hospital() {
 		
 	}
-	public ArrayList<Patient> getPatients() {
-		return patients;
+	
+	public void addDoctor(Doctor doctor) {
+		if(doctors.size()<3 && doctors.size()>=0) {
+			doctors.add(doctor);
+		}
 	}
 	
 	public ArrayList<Doctor> getDoctors() {
 		return doctors;
+	}
+	
+	public void addPatient(Patient patient) {
+		if(patients.size()<3 && patients.size()>=0) {
+			patients.add(patient);
+		}
+	}
+	
+	public ArrayList<Patient> getPatients() {
+		return patients;
 	}
 }

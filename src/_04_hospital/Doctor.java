@@ -1,48 +1,31 @@
 package _04_hospital;
 
+import java.util.ArrayList;
+
 public class Doctor {
 	
-	Patient[] patients = new Patient[3];
+	ArrayList<Patient> patients = new ArrayList<Patient>();
 	
-	public void assignPatient(Patient patient) {
-		boolean IS_ADDED = false;
-		for (int i = 0; i < patients.length; i++) {
-			if(patients[i] == null && !IS_ADDED) {
-				patients[i] = patient;
-				IS_ADDED = true;
-			}
-		}
-	}
+	boolean surgDone = false;
+	boolean makesHouseCall = false;
 	
-	public void doMedicine() {
-		for (int i = 0; i < patients.length; i++) {
-			if(patients[i] != null) {
-				patients[i].checkPulse();
-			}
-		}
-	}
-	
-	public Patient[] getPatients() {
-		return patients;
-	}
-	
-	public int getPatientLen() {
-		int total = 0;
-		for (int i = 0; i < patients.length; i++) {
-			if(patients[i] != null) {
-				total = total + 1;
-				
-			}
-		}
-		return total;
+	Doctor() {
+
 	}
 	
 	public boolean performsSurgery() {
-		return false;
+		return surgDone;
 	}
 	
 	public boolean makesHouseCalls() {
-		return false;
+		return makesHouseCall;
 	}
 	
+	public void assignPatient(Patient patient) {
+		patients.add(patient);
+	}
+	
+	public ArrayList<Patient> getPatients() {
+		return patients;
+	}
 }
