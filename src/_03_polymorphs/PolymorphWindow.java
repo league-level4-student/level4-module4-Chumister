@@ -46,7 +46,7 @@ public class PolymorphWindow extends JPanel implements ActionListener {
 		circlePoly = new CircleMorph(300, 425);
 		mousePoly = new MouseMorph(150, 100);
 		imagePoly = new ImagePolymorph(300, 300);
-		buttonPoly = new ButtonPolymorph(300, 100);
+		buttonPoly = new ButtonPolymorph(400, 200);
 		
 		
 		polys.add(bluePoly);

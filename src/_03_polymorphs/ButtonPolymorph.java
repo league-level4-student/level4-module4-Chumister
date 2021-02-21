@@ -10,8 +10,8 @@ import javax.swing.JOptionPane;
 
 
 public class ButtonPolymorph extends Polymorph implements ActionListener {
-	public int width = 1000;
-	public int height = 800;
+	public int width = 80;
+	public int height = 80;
 	public JButton buttonOverlay = new JButton();
 		ButtonPolymorph(int x, int y){
 			super(x, y);
