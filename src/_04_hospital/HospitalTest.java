@@ -38,7 +38,7 @@ public class HospitalTest extends TestCase {
 		Doctor testDoctor = new Doctor();
 		assertEquals(false, testDoctor.performsSurgery());
 
-		Doctor testSurgeon = new Surgeon();
+		Surgeon testSurgeon = new Surgeon();
 		assertEquals(true, testSurgeon.performsSurgery());
 
 		GeneralPractitioner testGP = new GeneralPractitioner();

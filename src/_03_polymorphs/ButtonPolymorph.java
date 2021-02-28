@@ -39,6 +39,8 @@ public class ButtonPolymorph extends Polymorph implements ActionListener {
 		@Override
 		public void draw(Graphics g) {
 			// TODO Auto-generated method stub
+			g.setColor(Color.red);
+			g.fillRect(x, y, width, height);
 			
 		}
 }
