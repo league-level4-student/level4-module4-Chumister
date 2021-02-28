@@ -2,31 +2,34 @@ package _04_hospital;
 
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class Hospital {
-	ArrayList<Doctor> doctors = new ArrayList<Doctor>();
+
+	ArrayList<Doctor> docters = new ArrayList<Doctor>();
 	ArrayList<Patient> patients = new ArrayList<Patient>();
 	
-	Hospital() {
-		
-	}
-	
 	public void addDoctor(Doctor doctor) {
-		if(doctors.size()<3 && doctors.size()>=0) {
-			doctors.add(doctor);
+		docters.add(doctor);
+		int[] vals = {1, 2, 3, 4, 5};
+		 for(int i = 0; i < vals.length; i ++){
+
+		          vals[i] = vals[i] * vals[i]; 
+
 		}
-	}
-	
-	public ArrayList<Doctor> getDoctors() {
-		return doctors;
+
+		System.out.println(vals[3]); 
 	}
 	
 	public void addPatient(Patient patient) {
-		if(patients.size()<3 && patients.size()>=0) {
-			patients.add(patient);
-		}
+		patients.add(patient);
 	}
 	
 	public ArrayList<Patient> getPatients() {
 		return patients;
+	}
+	
+	public ArrayList<Doctor> getDoctors() {
+		return docters;
 	}
 }

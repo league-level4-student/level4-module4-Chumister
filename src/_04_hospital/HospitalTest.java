@@ -33,12 +33,12 @@ public class HospitalTest extends TestCase {
 		assertEquals(3, testHospital.getPatients().size());
 	}
 
-
+	/* Fix asserts one at a time */
 	public void testDoctorsHaveSpecialties() throws Exception {
 		Doctor testDoctor = new Doctor();
 		assertEquals(false, testDoctor.performsSurgery());
 
-		Surgeon testSurgeon = new Surgeon();
+		Doctor testSurgeon = new Surgeon();
 		assertEquals(true, testSurgeon.performsSurgery());
 
 		GeneralPractitioner testGP = new GeneralPractitioner();
@@ -47,15 +47,15 @@ public class HospitalTest extends TestCase {
 		assertEquals(false, testDoctor.makesHouseCalls());
 	}
 
-	/* A doctor has a list of patients */ 
+	/* A doctor has a list of patients */
 	public void testAssignDoctor() throws Exception {
 		Doctor testDoctor = new GeneralPractitioner();
 		testDoctor.assignPatient(new Patient());
-		assertEquals(1, testDoctor.getPatients().size());
+		assertEquals(1, testDoctor.getPatientLen());
 		testDoctor.assignPatient(new Patient());
-		assertEquals(2, testDoctor.getPatients().size());
+		assertEquals(2, testDoctor.getPatientLen());
 		testDoctor.assignPatient(new Patient());
-		assertEquals(3, testDoctor.getPatients().size());
+		assertEquals(3, testDoctor.getPatientLen());
 	}
 
 	/* When you check a patient's pulse, they feel cared for */
@@ -66,20 +66,21 @@ public class HospitalTest extends TestCase {
 		assertEquals(true, testPatient.feelCare());
 	}
 
-	/* Doctors work on their Patients by checking their pulses. *//*
+	/* Doctors work on their Patients by checking their pulses. */
 	public void testDoctorsWork() throws Exception {
 		Doctor testDoctor = new GeneralPractitioner();
 		Patient max = new Patient();
 		Patient macky = new Patient();
 		testDoctor.assignPatient(max);
 		testDoctor.assignPatient(macky);
-		assertEquals(false, max.feelsCaredFor());
-		assertEquals(false, macky.feelsCaredFor());
+		assertEquals(false, max.feelCare());
+		assertEquals(false, macky.feelCare());
 		testDoctor.doMedicine();
-		assertEquals(true, max.feelsCaredFor());
-		assertEquals(true, macky.feelsCaredFor());
+		assertEquals(true, max.feelCare());
+		assertEquals(true, macky.feelCare());
 	}
-	/* test calling assignPatient when doctor is full throws exception *//*
+}
+	/* test calling assignPatient when doctor is full throws exception
 	public void testDoctorsCanOnlyHandle3Patients() throws Exception {
 		Doctor testDoctor = new Doctor();
 		testDoctor.assignPatient(new Patient());
@@ -104,7 +105,4 @@ assertTrue(testDoctor.getPatients().size() == 3);
 		assertEquals(3, testDoctors.get(1).getPatients().size());
 		assertEquals(2, testDoctors.get(2).getPatients().size());
 	}
-*/
-
-
-}
+ */
