@@ -79,8 +79,7 @@ public class HospitalTest extends TestCase {
 		assertEquals(true, max.feelCare());
 		assertEquals(true, macky.feelCare());
 	}
-}
-	/* test calling assignPatient when doctor is full throws exception
+
 	public void testDoctorsCanOnlyHandle3Patients() throws Exception {
 		Doctor testDoctor = new Doctor();
 		testDoctor.assignPatient(new Patient());
@@ -92,7 +91,8 @@ public class HospitalTest extends TestCase {
 		} catch (DoctorFullException dfe) {
 			assertTrue(true);
 		}
-assertTrue(testDoctor.getPatients().size() == 3);
+		
+		assertTrue(testDoctor.getPatients().size() == 3);
 	}
 	public void test8Patients() throws Exception {
 		// TODO: add 3 doctors to hospital
@@ -105,4 +105,5 @@ assertTrue(testDoctor.getPatients().size() == 3);
 		assertEquals(3, testDoctors.get(1).getPatients().size());
 		assertEquals(2, testDoctors.get(2).getPatients().size());
 	}
- */
+
+}
