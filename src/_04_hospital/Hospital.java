@@ -32,4 +32,14 @@ public class Hospital {
 	public ArrayList<Doctor> getDoctors() {
 		return docters;
 	}
+	public void assignPatientsToDoctors() throws DoctorFullException {
+
+		for (int j = 0; j < 3; j++) {
+			for (int i = 0; i < docters.size(); i++) {
+				if (patients.size() > (i + (3 * j))) {
+					docters.get(i).assignPatient(patients.get(i + (3 * j)));
+				}
+			}
+		}
+	}
 }

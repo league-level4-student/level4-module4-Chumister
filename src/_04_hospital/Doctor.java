@@ -6,14 +6,22 @@ public class Doctor {
 	
 	ArrayList<Patient> patients = new ArrayList<Patient>();
 	
-	public void assignPatient(Patient patient) {
+	public void assignPatient(Patient patient) throws DoctorFullException{
 		boolean IS_ADDED = false;
+		if (patients.size()<3) {
+			patients.add(patient);
+		} else {
+			throw new DoctorFullException();
+		}
+		
 		for (int i = 0; i < patients.size(); i++) {
 			if(patients == null && !IS_ADDED) {
-				patients = patient.toString();
+				patients.add(patient);
 				IS_ADDED = true;
 			}
 		}
+		
+		
 	}
 	
 	public void doMedicine() {
