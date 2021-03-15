@@ -41,5 +41,9 @@ public class Hospital {
 				}
 			}
 		}
+		if (patients.size()>docters.size()*3) {
+			throw new DoctorFullException();
+		}
 	}
+	
 }
