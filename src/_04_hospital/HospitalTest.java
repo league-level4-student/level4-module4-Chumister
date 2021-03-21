@@ -96,12 +96,18 @@ public class HospitalTest extends TestCase {
 	}
 	public void test8Patients() throws Exception {
 		// TODO: add 3 doctors to hospital
-		
+		for (int i = 0; i < 3; i++) {
+			testHospital.addDoctor(new Doctor());
+		}
 		// TODO: add 8 patients to hospital
+		for (int i = 0; i < 8; i++) {
+			testHospital.addPatient(new Patient());
+		}
 		// hospital assigns patients to doctors
+		List<Doctor> testDoctors = testHospital.getDoctors();
+
 		testHospital.assignPatientsToDoctors();
 		// hospital.getDoctors shows doctors have 3, 3, 2 patients
-		List<Doctor> testDoctors = testHospital.getDoctors();
 		
 		assertEquals(3, testDoctors.get(0).getPatients().size());
 		assertEquals(3, testDoctors.get(1).getPatients().size());
