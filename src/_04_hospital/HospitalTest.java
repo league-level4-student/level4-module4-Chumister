@@ -51,19 +51,19 @@ public class HospitalTest extends TestCase {
 	public void testAssignDoctor() throws Exception {
 		Doctor testDoctor = new GeneralPractitioner();
 		testDoctor.assignPatient(new Patient());
-		assertEquals(1, testDoctor.getPatients().size());
+		assertEquals(1, testDoctor.getPatientLen());
 		testDoctor.assignPatient(new Patient());
-		assertEquals(2, testDoctor.getPatients().size());
+		assertEquals(2, testDoctor.getPatientLen());
 		testDoctor.assignPatient(new Patient());
-		assertEquals(3, testDoctor.getPatients().size());
+		assertEquals(3, testDoctor.getPatientLen());
 	}
 
 	/* When you check a patient's pulse, they feel cared for */
 	public void testCheckPulse() throws Exception {
 		Patient testPatient = new Patient();
-		assertEquals(false, testPatient.feelsCaredFor());
+		assertEquals(false, testPatient.feelCare());
 		testPatient.checkPulse();
-		assertEquals(true, testPatient.feelsCaredFor());
+		assertEquals(true, testPatient.feelCare());
 	}
 
 	/* Doctors work on their Patients by checking their pulses. */
@@ -73,14 +73,13 @@ public class HospitalTest extends TestCase {
 		Patient macky = new Patient();
 		testDoctor.assignPatient(max);
 		testDoctor.assignPatient(macky);
-		assertEquals(false, max.feelsCaredFor());
-		assertEquals(false, macky.feelsCaredFor());
+		assertEquals(false, max.feelCare());
+		assertEquals(false, macky.feelCare());
 		testDoctor.doMedicine();
-		assertEquals(true, max.feelsCaredFor());
-		assertEquals(true, macky.feelsCaredFor());
+		assertEquals(true, max.feelCare());
+		assertEquals(true, macky.feelCare());
 	}
 
-	/* test calling assignPatient when doctor is full throws exception */
 	public void testDoctorsCanOnlyHandle3Patients() throws Exception {
 		Doctor testDoctor = new Doctor();
 		testDoctor.assignPatient(new Patient());
@@ -92,23 +91,27 @@ public class HospitalTest extends TestCase {
 		} catch (DoctorFullException dfe) {
 			assertTrue(true);
 		}
-assertTrue(testDoctor.getPatients().size() == 3);
+		
+		assertTrue(testDoctor.getPatients().size() == 3);
 	}
-
 	public void test8Patients() throws Exception {
 		// TODO: add 3 doctors to hospital
-
+		for (int i = 0; i < 3; i++) {
+			testHospital.addDoctor(new Doctor());
+		}
 		// TODO: add 8 patients to hospital
-
+		for (int i = 0; i < 8; i++) {
+			testHospital.addPatient(new Patient());
+		}
 		// hospital assigns patients to doctors
+		List<Doctor> testDoctors = testHospital.getDoctors();
+
 		testHospital.assignPatientsToDoctors();
 		// hospital.getDoctors shows doctors have 3, 3, 2 patients
-		List<Doctor> testDoctors = testHospital.getDoctors();
+		
 		assertEquals(3, testDoctors.get(0).getPatients().size());
 		assertEquals(3, testDoctors.get(1).getPatients().size());
 		assertEquals(2, testDoctors.get(2).getPatients().size());
 	}
-
-
 
 }
