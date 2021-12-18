@@ -21,8 +21,8 @@ public class EncapsulateTheDateTest {
 	
 	@Test
 	  public void testNomenclature() {
-		etd.setNomenclature("scoob");
-		assertEquals(etd.getNomenclature(), "scoob");
+		etd.setNomenClature("scoob");
+		assertEquals(etd.getNomenClature(), "scoob");
 	  }
 	
 	@Test
